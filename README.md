@@ -27,15 +27,18 @@ The goal of this project is to implement a robust, automated pipeline for buildi
 
 First, clone the repository to your local machine:
 
-```bash
+```
 git clone https://github.com/RonanJoel/devops-pipeline.git
 cd devops-pipeline
+```
 
 2. Install Docker
 
 Ensure Docker is installed on your machine. To check if Docker is installed, run:
 
+```
 docker --version
+```
 
 If Docker is not installed, follow the official installation guide for your operating system:
 
@@ -63,7 +66,9 @@ You need to configure Jenkins to interact with Docker:
 
 If Jenkins is running in Docker, use the following command to start it:
 
+```
 docker run -d -p 8080:8080 -p 50000:50000 --name jenkins jenkins/jenkins:lts
+```
 
 Once Jenkins is up and running, open your browser and navigate to http://localhost:8080.
 6. Configuring the Pipeline in Jenkins
@@ -99,6 +104,7 @@ You can modify the Jenkinsfile to add more stages or modify the existing stages:
 
 Example stages in Jenkinsfile:
 
+```
 pipeline {
     agent any
 
@@ -132,7 +138,7 @@ pipeline {
         }
     }
 }
-
+```
 9. Verify Deployment
 
 Once the pipeline runs successfully, you can verify the deployment:
