@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = 'my-app-image'
+        DOCKER_TAG = 'latest'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    echo "Building Docker image for the app"
+                    sh 'docker build -t $DOCKER_IMAGE:$DOCKER_TAG ./app'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    echo "Running tests..."
+                    // Aquí puedes agregar comandos para ejecutar pruebas si las tienes.
+                }
+            }
+        }
+
+        stage('Push') {
+            steps {
+                script {
+                    echo "Pushing the Docker image to Docker Hub (or your registry)"
+                    // Aquí puedes agregar el comando para hacer push a Docker Hub u otro registro
+                    // sh 'docker push $DOCKER_IMAGE:$DOCKER_TAG'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    echo "Deploying the application..."
+                    // Aquí puedes agregar el comando de despliegue
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo "Cleaning up..."
+            // Puedes agregar comandos para limpiar recursos después de la ejecución
+        }
+    }
+}
