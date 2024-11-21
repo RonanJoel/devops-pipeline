@@ -18,7 +18,18 @@ The goal of this project is to implement a robust, automated pipeline for buildi
 
 ## 📁 Repository Structure
 
-/ci-cd-pipeline/ ├── jenkins/ │ ├── Dockerfile # 🐳 Dockerfile to set up Jenkins environment │ ├── jenkinsfile # 📝 Jenkins pipeline definition file ├── app/ │ └── Dockerfile # 🐳 Dockerfile for the application ├── requirements.txt # 📄 Python dependencies for the app ├── .env # 🌍 Environment variables (credentials, secrets) ├── README.md # 📑 Project documentation └── Jenkinsfile # 📝 Jenkins pipeline script (root directory)
+```
+/ci-cd-pipeline/
+├── jenkins/
+│   ├── Dockerfile            # 🐳 Dockerfile to set up Jenkins environment
+│   ├── jenkinsfile           # 📝 Jenkins pipeline definition file
+├── app/
+│   └── Dockerfile            # 🐳 Dockerfile for the application
+├── requirements.txt          # 📄 Python dependencies for the app
+├── .env                      # 🌍 Environment variables (credentials, secrets)
+├── README.md                 # 📑 Project documentation
+└── Jenkinsfile               # 📝 Jenkins pipeline script (root directory)
+```
 
 
 ## ⚙️ Steps to Set Up the Project
