@@ -1,17 +1,17 @@
-# Usar una imagen base de Python
+# Use a base Python image
 FROM python:3.9-slim
 
-# Establecer el directorio de trabajo
+# Set the working directory
 WORKDIR /app
 
-# Copiar los archivos de la aplicación al contenedor
+# Copy the application files into the container
 COPY . /app
 
-# Instalar dependencias
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Exponer el puerto en el que la aplicación escucha
+# Expose the port on which the application will listen
 EXPOSE 5000
 
-# Comando para ejecutar la aplicación
-CMD ["python", "app.py"]  # Ajusta esto según tu aplicación
+# Command to run the application
+CMD ["python", "app.py"]  # Adjust this if your main file is different
